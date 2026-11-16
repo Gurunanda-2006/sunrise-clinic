@@ -1,0 +1,3 @@
+# Keep line endings consistent on Windows, macOS and Linux.
+* text=auto
+*.webp binary
