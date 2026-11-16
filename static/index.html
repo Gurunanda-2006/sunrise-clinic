@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunrise Clinic</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css?v=3">
+</head>
+<body>
+
+<main class="hero" id="top">
+  <div class="frame">
+    <img src="/static/hero.webp" alt="Sunrise Clinic: General Physician, Orthopaedics and Dermatology" draggable="false">
+    <button class="hot h-gp" data-ask="I need a General Physician appointment" aria-label="General Physician"></button>
+    <button class="hot h-or" data-ask="I need an Orthopaedics appointment" aria-label="Orthopaedics"></button>
+    <button class="hot h-de" data-ask="I need a Dermatology appointment" aria-label="Dermatology"></button>
+    <button class="hot h-orb" id="orb" aria-label="Book an appointment"></button>
+  </div>
+</main>
+
+<!-- Chat widget -->
+<button class="fab" id="fab" aria-label="Open chat">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.7-5.1A8.5 8.5 0 1 1 21 12Z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></svg>
+</button>
+
+<section class="chat" id="chat" aria-label="Clinic assistant" hidden>
+  <div class="chat-head">
+    <div>
+      <strong>Sunrise assistant</strong>
+      <small id="status">Online</small>
+    </div>
+    <select id="lang" aria-label="Language">
+      <option value="en-IN">English</option>
+      <option value="te-IN">తెలుగు</option>
+      <option value="hi-IN">हिन्दी</option>
+    </select>
+    <button class="icon" id="call" title="Voice call" aria-label="Start voice call">
+      <svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
+    </button>
+    <button class="icon" id="newchat" title="New chat" aria-label="New chat">
+      <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+    </button>
+    <button class="icon" id="close" title="Close" aria-label="Close chat">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <div class="callbar" id="callbar" hidden>
+    <span class="pulse"></span><span id="calltext">Listening…</span>
+    <button id="hangup">End call</button>
+    <div class="langs" role="group" aria-label="Language you are speaking">
+      <span>I'm speaking:</span>
+      <button type="button" data-lang="en-IN">English</button>
+      <button type="button" data-lang="te-IN">తెలుగు</button>
+      <button type="button" data-lang="hi-IN">हिन्दी</button>
+    </div>
+  </div>
+  <div class="msgs" id="msgs" aria-live="polite"></div>
+  <form class="chat-form" id="form">
+    <input id="input" autocomplete="off" placeholder="Type your message…" maxlength="1000">
+    <button type="button" class="icon" id="mic" title="Speak" aria-label="Speak your message">
+      <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+    </button>
+    <button class="send" aria-label="Send">
+      <svg viewBox="0 0 24 24"><path d="M4 12 20 4l-6 16-3-7-7-1Z"/></svg>
+    </button>
+  </form>
+</section>
+
+<script src="/static/app.js?v=5"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+services:
+  clinic:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file: .env                      # API keys and settings
+    environment:
+      CLINIC_DB: /srv/db/clinic.db
+    volumes:
+      - clinic-db:/srv/db               # bookings survive container restarts
+      - ./secrets:/srv/secrets:ro       # Google Calendar key file (optional bonus)
+
+volumes:
+  clinic-db:
